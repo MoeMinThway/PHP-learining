@@ -1,4 +1,4 @@
-<?php20
+<?php
 
     echo $_COOKIE['phone'];
 ?>
