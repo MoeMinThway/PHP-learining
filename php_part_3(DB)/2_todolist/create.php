@@ -15,7 +15,8 @@
         <label for="name" >Your Tasks </label>
         <input type="text" id="name" name="taskName" placeholder="Enter your tasks...">
         <button type="submit" name="addBtn">Add</button>
-    </form>
+    </form> <br><br>
+   <button> <a href="read_list.php">Go to Todo List</a></button>
     <?php
         require("./connection.php");
 
@@ -26,7 +27,8 @@
                 $sql = " INSERT into work (name) VALUES ('$taskName') ";
 
                 if(mysqli_query($connection,$sql)){
-                    echo "insert success";
+                    // echo "insert success";
+                    header("location:read_list.php");
                 }else{
                     echo "insert fail".mysqli_error();
                 }

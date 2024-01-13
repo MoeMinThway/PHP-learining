@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Tasks list</h1>
+ <button>    <a href="create.php">Create Task</a></button> <br> <br>
     <table border="1">
         <thead>
             <tr>
@@ -34,7 +35,7 @@
 
                 while($row = mysqli_fetch_assoc($query)){
 
-                    $time =date('g:i:a',strtotime($row['create_at']));
+                    $time =date('d:m-Y g:i:a',strtotime($row['create_at']));
 
                       // <td>{$row ['create_at'] }    </td>
                     echo "
@@ -44,10 +45,10 @@
                       
                         <td>$time    </td>
                         <td>
-                            <a href=''>Update</a> 
+                            <a href='update.php?id={$row ['id']}'>Update</a> 
                         </td>
                         <td>
-                              <a href=''>Delete</a>
+                              <a href='delete.php?id={$row ['id'] }'>Delete</a>
                         </td>
                 </tr>    
                     
